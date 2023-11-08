@@ -3,7 +3,7 @@ import { AppBar, IconButton, Toolbar, Grid, Typography } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
 import { startLogout } from "../../store/auth/thunks";
 
-export const NavBar = ({drawerWith = 240}) => {
+export const NavBar = ({toggleSidebar}) => {
   
   const dispatch = useDispatch();
   
@@ -14,17 +14,12 @@ export const NavBar = ({drawerWith = 240}) => {
   return (
   <AppBar
     position='fixed'
-    sx={{ width: {sm: `calc(100% - ${drawerWith}px)`},
-          ml: {sm: `${drawerWith}px`}
-     }}
   >
      
     <Toolbar>
       <IconButton
+       onClick={toggleSidebar}
        color='inherit'
-       edge='start'
-       sx={{mr: 2, 
-        display: {sm: 'none' }}}
       >
         <MenuOutlined />
       </IconButton>

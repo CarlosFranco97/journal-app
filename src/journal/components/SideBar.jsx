@@ -3,19 +3,19 @@ import { Box, Divider, Drawer, Toolbar, Typography, List, ListItem, ListItemButt
 import { useSelector } from "react-redux"
 import { SideBarItem } from "./SideBarItem";
 
-export const SideBar = ({drawerWith = 240}) => {
+export const SideBar = ({isActive, toggleSidebar }) => {
   const {displayName} = useSelector(state => state.auth);
   const {notes} = useSelector(state => state.journal);
   return (
     <Box 
       component='nav'
-      sx={{ width: {sm: drawerWith}, flexShrink:{sm: 0} }}
     >
         <Drawer
-         variant='permanent'
-         open
+         onClick={toggleSidebar}
+         open={isActive}
          sx={{
-              display:{xs: 'block'}, '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWith }}}
+              display:{xs: 'block'}, 
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 }}}
         >
           <Toolbar>
             <Typography 

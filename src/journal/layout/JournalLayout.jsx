@@ -1,16 +1,19 @@
 import { Box, Toolbar } from "@mui/material"
 import { NavBar } from "../components";
 import { SideBar } from "../components";
+import { useState } from "react";
 export const JournalLayout = ({children}) => {
-  
-    const  drawerWith = 240;
-  
+  const [isActive, setIsActive] = useState(false)
+   
+  const handleClickSidebar = () => {
+    setIsActive(!isActive)
+  }
     return (
     <Box sx={{display: 'flex'}} className='animate__animated animate__fadeIn animate__faster'>
       
-      <NavBar drawerWith={drawerWith}/>
+      <NavBar toggleSidebar={handleClickSidebar}/>
 
-      <SideBar drawerWith={drawerWith}/>
+      <SideBar toggleSidebar={handleClickSidebar} isActive={isActive}/>
 
         <Box
         component='main'
