@@ -24,7 +24,7 @@ CSS Modules / Styled Components: Para el diseño de la interfaz.
 
 ## Instalación y uso
 1. Clonar el repositorio:
-git clone https://github.com/carlosfranco97/journalapp.git
+git clone https://github.com/carlosfranco97/journal-app.git
 
 2. Acceder al directorio del proyecto:
 cd journalapp
